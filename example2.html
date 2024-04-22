@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Centered Text Column</title>
+    <title>Responsive Text Column</title>
     <style>
         body, html {
             margin: 0;
@@ -16,16 +16,25 @@
             font-family: Arial, sans-serif; /* Ensures consistent font styling */
         }
         #text-column {
-            width: 40%; /* Column width is 50% of the viewport width */
-            height: 100%; /* Full height to make use of vertical space */
+            width: 50%; /* Column width is 50% of the viewport width for large devices */
+            max-width: 1400px; /* Limits width for very wide screens */
+            min-width: 300px; /* Ensures minimum readability */
+            height: auto; /* Adjusts height based on content */
             overflow-y: auto; /* Enables scrolling on Y-axis if content overflows */
             padding: 20px; /* Padding for better readability */
             box-sizing: border-box; /* Padding and border included in width calculation */
         }
         h1 {
-            width: 40%; /* Header width matches the text column */
+            width: 100%; /* Header width is 100% to center it based on its container */
             text-align: center; /* Centers the text in the header */
-            margin-bottom: 0; /* Removes default margin to tighten spacing between header and text */
+            margin-bottom: 10px; /* Adds some space between the header and the text column */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            #text-column {
+                width: 80%; /* Makes the column wider on smaller screens */
+            }
         }
     </style>
 </head>
